@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decodificador de Texto</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="" alt="Logo Alura">
         <h1>Decodificador de Texto</h1>
     </header>
-    <body>
-        <label for="">Digite seu texto</label>
-        <input type="text">
-        <p>Apenas letras minúsculas e sem acento</p>
-        <button>Criptografar</button>
-        <button>Descriptografar</button>
-    </body>
-    <aside>
-        <img src="" alt="Pessoa com uma lupa">
-        <p>Nenhuma mensagem encontrada</p>
-        <p>Digite um texto que você deseja criptografar ou descriptogragfar.</p>
-    </aside>
+    <main>
+        <section>
+            <div class="text_container">
+                <input class="text_input" type="text" placeholder="Digite seu texto">
+                <p>Apenas letras minúsculas e sem acento</p>
+                <div class="buttons">
+                    <button class="button1">Criptografar</button>
+                    <button class="button2">Descriptografar</button>
+                </div>
+            </div>
+        </section>
+        <aside>
+            <div style="border-top: 1px solid blue; color:red" id="elt">
+                An example div
+                <img src="" alt="Pessoa com uma lupa">
+                <p>Nenhuma mensagem encontrada</p>
+                <p>Digite um texto que você deseja criptografar ou descriptogragfar.</p>
+            </div>
+            <pre id="out"></pre>
+        </aside>
+    </main>
     <footer>Developed by Leonardo Torres Rodrigues</footer>
 </body>
 </html>
