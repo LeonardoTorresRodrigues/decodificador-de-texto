@@ -68,14 +68,14 @@ aside {
     align-content: center;
 }
 
-.aside_text {
+.aside_content {
     padding: 3rem;
 }
 
-.aside_text p strong {
+.aside_content p strong {
     font-size: 24px;
 }
 
-.aside_text p {
+.aside_content p {
     padding-top: 1rem;
 }
