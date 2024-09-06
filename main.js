@@ -25,5 +25,18 @@ function Criptografar() {
                 textEncrypted += letter;
         }
     });
-    return console.log(textEncrypted);
+    EncryptOutput(textEncrypted)
+}
+
+function EncryptOutput(textEncrypted) {
+    const asideContent = document.getElementById("aside_content");
+
+    while (asideContent.firstChild) {
+        asideContent.removeChild(asideContent.firstChild);
+    }
+
+    const newParagraph = document.createElement("p");
+    newParagraph.textContent = textEncrypted;
+
+    asideContent.appendChild(newParagraph);
 }
