@@ -1,69 +1,48 @@
-function Criptografar() {
-    const textInput = document.getElementById("text_input").value;
-    const textSplited = textInput.split('');
-
-    let textEncrypted = '';
-
-    textSplited.forEach(letter => {
-        switch (letter.toLowerCase()) {
-            case 'a':
-                textEncrypted += "ai";
-                break;
-            case 'e':
-                textEncrypted += "enter";
-                break;
-            case 'i':
-                textEncrypted += "imes";
-                break;
-            case 'o':
-                textEncrypted += "ober";
-                break;
-            case 'u':
-                textEncrypted += "ufat";
-                break;
-            default:
-                textEncrypted += letter;
-        }
-    });
-    EncryptOutput(textEncrypted)
-}
-
-function Descriptografar() {
-    const textInput = document.getElementById("text_input").value;
-    const dicionario = {
-      ober: 'o', // Ordenado por tamanho decrescente
-      imes: 'i',
-      ufat: 'u',
-      enter: 'e',
-      ai: 'a'
+function createCharacterMap() {
+    return {
+      a: 'ai',
+      e: 'enter',
+      i: 'imes',
+      o: 'ober',
+      u: 'ufat'
     };
+  }
   
-    textoCriptografado = textInput.toLowerCase();
-  
-    let textoDescriptografado = '';
-    let i = 0;
-  
-    while (i < textoCriptografado.length) {
-      let achouSubstituicao = false;
-      for (const chave in dicionario) {
-        if (textoCriptografado.substring(i).startsWith(chave)) {
-          textoDescriptografado += dicionario[chave];
-          i += chave.length;
-          achouSubstituicao = true;
+  function substituteCharacters(text, map) {
+    let result = '';
+    for (let i = 0; i < text.length; i++) {
+      let found = false;
+      for (const key in map) {
+        if (text.substring(i).startsWith(key)) {
+          result += map[key];
+          i += key.length - 1;
+          found = true;
           break;
         }
       }
-      if (!achouSubstituicao) {
-        textoDescriptografado += textoCriptografado[i];
-        i++;
+      if (!found) {
+        result += text[i];
       }
     }
-  
-    EncryptOutput(textoDescriptografado);
+    return result;
   }
   
+  function Criptografar() {
+    const textInput = document.getElementById("text_input").value;
+    const map = createCharacterMap();
+    const textEncrypted = substituteCharacters(textInput, map);
+    TextOutput(textEncrypted);
+  }
+  
+  function Descriptografar() {
+    const textInput = document.getElementById("text_input").value;
+    const map = createCharacterMap();
+    const invertedMap = Object.entries(map).reduce((acc, [key, value]) => ({ ...acc, [value]: key }), {});
+    const textDecrypted = substituteCharacters(textInput, invertedMap);
+    TextOutput(textDecrypted);
+  }
 
-function EncryptOutput(textEncrypted) {
+function TextOutput(text) {
     const asideContent = document.getElementById("aside_content");
 
     while (asideContent.firstChild) {
@@ -71,7 +50,7 @@ function EncryptOutput(textEncrypted) {
     }
 
     const newParagraph = document.createElement("p");
-    newParagraph.textContent = textEncrypted;
+    newParagraph.textContent = text;
 
     asideContent.appendChild(newParagraph);
 }
