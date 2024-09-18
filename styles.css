@@ -22,18 +22,18 @@ main {
     display: flex;
 }
 
-section {
+.main__container {
     display: flex;
     flex-direction: column;
 }
 
-.text_container {
+.text__container {
     width: 70vw;
     height: 70vh;
     padding: 5rem;
 }
 
-.text_input {
+.text__input {
     width: 100%;
     height: 100%;
     border: none;
@@ -62,28 +62,28 @@ section {
     cursor: pointer;
 }
 
-aside {
+.output__section {
     display: flex;
     text-align: center;
     height: 944px;
     width: 400px;
 }
 
-.aside_container {
+.output__container {
     width: 100%;
     height: 100%;
     border: 1px solid blue;
     align-content: center;
 }
 
-.aside_content {
+.output__content {
     padding: 3rem;
 }
 
-.aside_content p strong {
+.output__content p strong {
     font-size: 24px;
 }
 
-.aside_content p {
+.output__content p {
     padding-top: 1rem;
 }

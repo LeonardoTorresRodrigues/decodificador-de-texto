@@ -28,14 +28,14 @@ function createCharacterMap() {
   }
   
   function Criptografar() {
-    const textInput = document.getElementById("text_input").value;
+    const textInput = document.getElementById("text__input").value;
     const map = createCharacterMap();
     const textEncrypted = substituteCharacters(textInput, map);
     TextOutput(textEncrypted);
   }
   
   function Descriptografar() {
-    const textInput = document.getElementById("text_input").value;
+    const textInput = document.getElementById("text__input").value;
     const map = createCharacterMap();
     const invertedMap = Object.entries(map).reduce((acc, [key, value]) => ({ ...acc, [value]: key }), {});
     const textDecrypted = substituteCharacters(textInput, invertedMap);
@@ -43,7 +43,7 @@ function createCharacterMap() {
   }
 
 function TextOutput(text) {
-    const asideContent = document.getElementById("aside_content");
+    const asideContent = document.getElementById("output__content");
 
     while (asideContent.firstChild) {
         asideContent.removeChild(asideContent.firstChild);

@@ -12,25 +12,28 @@
         <h1>Decodificador de Texto</h1>
     </header>
     <main>
-        <section>
-            <div class="text_container">
-                <input id="text_input" class="text_input" type="text" placeholder="Digite seu texto">
+        <section class="main__container">
+            <div class="text__container">
+                <label for="text__input">Digite seu texto:</label>
+                <input id="text__input" class="text__input" type="text" placeholder="Apenas letras minúsculas e sem acento">
                 <p>Apenas letras minúsculas e sem acento</p>
                 <div class="buttons">
-                    <button id="button_encrypt" class="button1" onclick="Criptografar()">Criptografar</button>
-                    <button id="button_descrypt" class="button2" onclick="Descriptografar()">Descriptografar</button>
+                    <button class="button1" aria-label="Criptografar o texto" onclick="Criptografar()">Criptografar</button>
+                    <button class="button2" aria-label="Descriptografar o texto" onclick="Descriptografar()">Descriptografar</button>
                 </div>
             </div>
         </section>
-        <aside>
-            <div class="aside_container">
-                <div id="aside_content" class="aside_content">
+        <article class="output__section">
+            <div class="output__container">
+                <figure id="output__content" class="output__content">
                     <img src="./assets/High quality products 1 1.png" alt="Pessoa com uma lupa">
-                    <p><strong>Nenhuma mensagem encontrada</strong></p>
-                    <p>Digite um texto que você deseja criptografar ou descriptogragfar.</p>
-                </div>
+                    <figcaption>Nenhuma mensagem encontrada</figcaption>
+                </figure>
+                <p class="output__message" aria-live="polite">
+                    Digite um texto que você deseja criptografar ou descriptogragfar.
+                </p>
             </div>
-        </aside>
+        </article>
     </main>
     <footer>Developed by Leonardo Torres Rodrigues</footer>
 </body>
