@@ -28,6 +28,41 @@ function Criptografar() {
     EncryptOutput(textEncrypted)
 }
 
+function Descriptografar() {
+    const textInput = document.getElementById("text_input").value;
+    const dicionario = {
+      ober: 'o', // Ordenado por tamanho decrescente
+      imes: 'i',
+      ufat: 'u',
+      enter: 'e',
+      ai: 'a'
+    };
+  
+    textoCriptografado = textInput.toLowerCase();
+  
+    let textoDescriptografado = '';
+    let i = 0;
+  
+    while (i < textoCriptografado.length) {
+      let achouSubstituicao = false;
+      for (const chave in dicionario) {
+        if (textoCriptografado.substring(i).startsWith(chave)) {
+          textoDescriptografado += dicionario[chave];
+          i += chave.length;
+          achouSubstituicao = true;
+          break;
+        }
+      }
+      if (!achouSubstituicao) {
+        textoDescriptografado += textoCriptografado[i];
+        i++;
+      }
+    }
+  
+    EncryptOutput(textoDescriptografado);
+  }
+  
+
 function EncryptOutput(textEncrypted) {
     const asideContent = document.getElementById("aside_content");
 
