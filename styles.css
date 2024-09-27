@@ -3,7 +3,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    background-color: #F3F5FC;
 }
 
 body {
@@ -106,20 +107,31 @@ main {
 .output__container {
     width: 100%;
     height: 100%;
-    border: 1px solid blue;
+    border: none;
+    border-radius: 32px;
     align-content: center;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 10px #000000;
 }
 
-/* .output__content {
-    padding: 3rem;
-} */
+.output__content {
+    background-color: #FFFFFF;
+}
 
 .output__content img {
     display: none;
 }
 
-.output__content p strong {
+.output__title {
     font-size: 24px;
+    font-weight: bold;
+    color: #343A40;
+    font-family: "Inter", sans-serif; 
+    background-color: #FFFFFF;
+}
+
+.output__message {
+    background-color: #FFFFFF;
 }
 
 /* .output__content p {
