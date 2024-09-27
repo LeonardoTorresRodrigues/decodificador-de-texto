@@ -51,6 +51,10 @@ main {
     color: #0A3871;
 }
 
+.text__input::placeholder {
+    color: #0A3871;
+}
+
 .buttons {
     width: 90%;
     display: flex;
