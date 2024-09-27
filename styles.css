@@ -55,6 +55,11 @@ main {
     color: #0A3871;
 }
 
+.text__info--container {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .buttons {
     width: 90%;
     display: flex;
