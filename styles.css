@@ -76,6 +76,8 @@ main {
     text-align: center;
     height: 20vh;
     width: 80vw;
+    margin: auto;
+    padding: 1rem;
 }
 
 .output__container {
