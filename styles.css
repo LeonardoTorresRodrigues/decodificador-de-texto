@@ -99,9 +99,9 @@ main {
     display: flex;
     text-align: center;
     height: 20vh;
-    width: 80vw;
+    width: 90vw;
     margin: auto;
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 .output__container {
@@ -116,10 +116,15 @@ main {
 
 .output__content {
     background-color: #FFFFFF;
+    margin: 0.5rem;
 }
 
 .output__content img {
     display: none;
+}
+
+.output__content figcaption {
+    background-color: #FFFFFF;
 }
 
 .output__title {
@@ -127,17 +132,4 @@ main {
     font-weight: bold;
     color: #343A40;
     font-family: "Inter", sans-serif; 
-    background-color: #FFFFFF;
 }
-
-.output__message {
-    background-color: #FFFFFF;
-}
-
-.output__content figcaption {
-    background-color: #FFFFFF;
-}
-
-/* .output__content p {
-    padding-top: 1rem;
-} */
