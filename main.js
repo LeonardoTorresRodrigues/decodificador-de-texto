@@ -49,7 +49,7 @@ function TextOutput(text) {
         asideContent.removeChild(asideContent.firstChild);
     }
 
-    const newParagraph = document.createElement("p");
+    const newParagraph = document.createElement("figcaption");
     newParagraph.textContent = text;
 
     asideContent.appendChild(newParagraph);
